@@ -9,9 +9,12 @@ function App() {
   const contactList = useSelector(selectContacts);
   const searchQuery = useSelector(selectNameFilter);
 
-  const filteredContacts = contactList.filter((contact) =>
-    contact.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredContacts =
+    searchQuery.trim() === ""
+      ? contactList
+      : contactList.filter((contact) =>
+          contact.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
+        );
 
   return (
     <div>
