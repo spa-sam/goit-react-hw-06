@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearStorage, storageCleared } from "../../redux/storageSlice";
+import css from "./ClearStorageButton.module.css";
 
 const ClearStorageButton = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,11 @@ const ClearStorageButton = () => {
     dispatch(clearStorage());
   };
 
-  return <button onClick={handleClick}>Clear Storage</button>;
+  return (
+    <button onClick={handleClick} className={css.clearButton}>
+      Clear Storage
+    </button>
+  );
 };
 
 export default ClearStorageButton;
