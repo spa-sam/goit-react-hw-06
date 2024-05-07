@@ -4,6 +4,7 @@ import ContactList from "../ContactList/ContactList";
 import SearchBox from "../SearchBox/SearchBox";
 import { selectContacts, selectNameFilter } from "../../redux/selectors";
 import "./App.css";
+import ClearStorageButton from "../ClearStorageButton/ClearStorageButton";
 
 function App() {
   const contactList = useSelector(selectContacts);
@@ -22,6 +23,7 @@ function App() {
       <ContactForm />
       <SearchBox />
       <ContactList contacts={filteredContacts} />
+      <ClearStorageButton />
     </div>
   );
 }
